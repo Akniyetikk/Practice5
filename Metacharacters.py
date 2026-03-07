@@ -11,28 +11,28 @@
 #|	Either or	"falls|stays"	
 #()	Capture and group	 
 
-ex2
+ex1
 import re
 txt = "The rain in Spain"
 #Find all lower case characters alphabetically between "a" and "m": ['h', 'e', 'a', 'i', 'i', 'a', 'i']
 x = re.findall("[a-m]", txt)
 print(x)
 
-ex3
+ex2
 import re
 txt = "That will be 59 dollars"
 #Find all digit characters: ['5', '9']
 x = re.findall("\d", txt)
 print(x)
 
-ex4
+ex3
 import re
 txt = "hello planet"
 #Search for a sequence that starts with "he", followed by two (any) characters, and an "o": ['hello']
 x = re.findall("he..o", txt)
 print(x)
 
-ex5
+ex4
 import re
 txt = "hello planet"
 #Check if the string starts with 'hello':
@@ -42,7 +42,7 @@ if x:
 else:
   print("No match")
 
-ex6
+ex5
 import re
 txt = "hello planet"
 #Check if the string ends with 'planet':
@@ -52,21 +52,21 @@ if x:
 else:
   print("No match")
 
-ex7
+ex6
 import re
 txt = "hello planet"
 #Search for a sequence that starts with "he", followed by 0 or more  (any) characters, and an "o": ['hello']
 x = re.findall("he.*o", txt)
 print(x)
 
-ex8
+ex7
 import re
 txt = "hello planet"
 #Search for a sequence that starts with "he", followed by 1 or more  (any) characters, and an "o": ['hello']
 x = re.findall("he.+o", txt)
 print(x)
 
-ex9
+ex8
 import re
 txt = "hello planet"
 #Search for a sequence that starts with "he", followed by 0 or 1  (any) character, and an "o": []
@@ -74,14 +74,14 @@ x = re.findall("he.?o", txt)
 print(x)
 #This time we got no match, because there were not zero, not one, but two characters between "he" and the "o"
 
-ex10
+ex9
 import re
 txt = "hello planet"
 #Search for a sequence that starts with "he", followed excactly 2 (any) characters, and an "o": ['hello']
 x = re.findall("he.{2}o", txt)
 print(x)
 
-ex11
+ex10
 import re
 txt = "The rain in Spain falls mainly in the plain!"
 #Check if the string contains either "falls" or "stays": ['falls']
@@ -103,7 +103,7 @@ else:
 #re.UNICODE	re.U	Returns Unicode matches. This is default from Python 3. For Python 2: use this flag to return only Unicode matches	
 #re.VERBOSE	re.X	Allows whitespaces and comments inside patterns. Makes the pattern more readable
 
-ex12
+ex11
 import re
 txt = "Åland"
 #Find all ASCII matches:
@@ -113,7 +113,7 @@ print(re.findall("\w", txt))
 #Same result using the shorthand re.A flag:
 print(re.findall("\w", txt, re.A))
 
-ex13
+ex12
 import re
 txt = "The rain in Spain"
 #Use a case-insensitive search when finding a match for Spain in the text:
@@ -138,7 +138,7 @@ print(re.findall("spain", txt, re.DEBUG))
 #27. SUCCESS
 #[]
 
-ex14
+ex13
 import re
 txt = """Hi
 my
@@ -152,7 +152,7 @@ print(re.findall("me.is", txt))
 #Same result with the shorthand re.S flag: ['me\nis']
 print(re.findall("me.is", txt, re.S))
 
-ex15
+ex14
 import re
 txt = "The rain in Spain"
 #Use a case-insensitive search when finding a match for Spain in the text: ['Spain']
